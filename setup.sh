@@ -2,8 +2,8 @@ image_version=`date +%Y%m%d%H%M`;
 echo $image_version;
 # cd projecttestdocker
 git pull --rebase origin main;
-docker stop projecttestdocker;
-docker rm projecttestdocker;
+#docker stop projecttestdocker;
+#docker rm projecttestdocker;
 docker build -t projecttestdocker:$image_version .;
 docker images;
 docker run -p 3000:3000 -d --name projecttestdocker projecttestdocker:$image_version;
